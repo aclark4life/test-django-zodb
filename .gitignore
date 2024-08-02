@@ -1,0 +1,10 @@
+__pycache__
+*.pyc
+dist/
+node_modules/
+_build/
+.elasticbeanstalk/
+Data.fs
+Data.fs.index
+Data.fs.lock
+Data.fs.tmp
