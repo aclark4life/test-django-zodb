@@ -179,7 +179,7 @@ AUTH_USER_MODEL = 'siteuser.User'
 DATABASES = {
     "default": {
         "ENGINE": "django_zodb",
+        "AUTOCOMMIT": False,
     }
 }
 SESSION_ENGINE = "django.contrib.sessions.backends.file"
-AUTOCOMMIT = False
