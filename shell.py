@@ -1,9 +1,8 @@
 import ZODB, ZODB.FileStorage
 import readline
 import code
-
+import rlcompleter  # noqa
 readfunc = readline.parse_and_bind("tab: complete")
-
 storage = ZODB.FileStorage.FileStorage('Data.fs')
 db = ZODB.DB(storage)
 connection = db.open()
