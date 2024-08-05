@@ -189,3 +189,4 @@ DATABASES = {
     }
 }
 SESSION_ENGINE = "django.contrib.sessions.backends.file"
+INSTALLED_APPS.append("django_zodb")
