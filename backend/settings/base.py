@@ -181,11 +181,11 @@ TEMPLATES[0]["DIRS"].append(os.path.join(PROJECT_DIR, "templates"))
 INSTALLED_APPS.append("siteuser")
 AUTH_USER_MODEL = "siteuser.User"
 DATABASES = {
-    'default': {
-        'ENGINE': 'django_zodb',
-        'NAME': 'Data.fs',  # Path to your ZODB storage file
-        'CACHE_SIZE': 10000,  # Size of the in-memory cache
-        'PERSISTENT_CACHE': '/tmp'  # Path to the persistent cache directory
+    "default": {
+        "ENGINE": "django_zodb",
+        "NAME": "Data.fs",  # Path to your ZODB storage file
+        "CACHE_SIZE": 10000,  # Size of the in-memory cache
+        "PERSISTENT_CACHE": "/tmp",  # Path to the persistent cache directory
     }
 }
 SESSION_ENGINE = "django.contrib.sessions.backends.file"
