@@ -136,8 +136,8 @@ SEARCH_MODELS = [
 ALLOWED_HOSTS = ["*"]
 import dj_database_url  # noqa
 
-DATABASE_URL = os.environ.get("DATABASE_URL", "postgres://:@:/project-makefile")
-DATABASES["default"] = dj_database_url.parse(DATABASE_URL)
+# DATABASE_URL = os.environ.get("DATABASE_URL", "postgres://:@:/project-makefile")
+# DATABASES["default"] = dj_database_url.parse(DATABASE_URL)
 INSTALLED_APPS.append("webpack_boilerplate")
 INSTALLED_APPS.append("rest_framework")
 INSTALLED_APPS.append("rest_framework.authtoken")
@@ -180,13 +180,31 @@ EXPLORER_DEFAULT_CONNECTION = "default"
 TEMPLATES[0]["DIRS"].append(os.path.join(PROJECT_DIR, "templates"))
 INSTALLED_APPS.append("siteuser")
 AUTH_USER_MODEL = "siteuser.User"
-DATABASES = {
-    "default": {
-        "ENGINE": "django_zodb",
-        "NAME": "Data.fs",  # Path to your ZODB storage file
-        "CACHE_SIZE": 10000,  # Size of the in-memory cache
-        "PERSISTENT_CACHE": "/tmp",  # Path to the persistent cache directory
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django_zodb",
+#         "NAME": "Data.fs",  # Path to your ZODB storage file
+#         "CACHE_SIZE": 10000,  # Size of the in-memory cache
+#         "PERSISTENT_CACHE": "/tmp",  # Path to the persistent cache directory
+#     }
+# }
 SESSION_ENGINE = "django.contrib.sessions.backends.file"
 INSTALLED_APPS.append("django_zodb")
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.db.backends': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+    },
+}
